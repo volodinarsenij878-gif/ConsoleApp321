@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program161
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Достоинство карты (6–14): ");
+            if (int.TryParse(Console.ReadLine(), out int rank))
+            {
+                if (rank < 6 || rank > 14)
+                {
+                    Console.WriteLine("Недопустимое достоинство.");
+                    return;
+                }
+
+                string cardName;
+                switch (rank)
+                {
+                    case 11: cardName = "Валет"; break;
+                    case 12: cardName = "Дама"; break;
+                    case 13: cardName = "Король"; break;
+                    case 14: cardName = "Туз"; break;
+                    default: cardName = rank.ToString(); break;
+                }
+
+                Console.WriteLine(cardName);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка ввода.");
+            }
+        }
+    }
+}
